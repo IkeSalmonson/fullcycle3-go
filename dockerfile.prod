@@ -1,0 +1,17 @@
+FROM golang:1.19  AS build
+#FROM golang:alpine > usar no prod / imagem otimizadas 
+
+WORKDIR /go/src
+ENV PATH="/go/bin:${PATH}"
+
+COPY . .
+
+RUN go build -o fullcycle . 
+
+ 
+
+FROM scratch
+ 
+COPY --from=build /go/src/fullcycle fullcycle
+
+CMD  [ "./fullcycle" ]
