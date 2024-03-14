@@ -7,7 +7,6 @@ COPY . .
 
 RUN go build -o fullcycle . 
 
- 
 
 FROM scratch
  
