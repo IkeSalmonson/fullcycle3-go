@@ -1,5 +1,4 @@
 FROM golang:1.19  AS build
-#FROM golang:alpine > usar no prod / imagem otimizadas 
 
 WORKDIR /go/src
 ENV PATH="/go/bin:${PATH}"
